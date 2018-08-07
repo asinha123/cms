@@ -9,19 +9,25 @@ var list = function (req, res) {
 
   if (!_.isEmpty(req.body)) {
     var where = {};
+
+    if (req.body.userId) {
+      where = { groupId: req.body.userId };
+    }
     var offset = ((req.body.pageNumber - 1) * req.body.pageSize);
     var limit = req.body.pageSize;
     if (req.body.searchText) {
       var Op = db.Sequelize.Op;
       where = {
         [Op.or]: [
-          { status:  {
+          {
+            status: {
               $like: '%' + req.body.searchText + '%'
             }
           },
-          { groupName: {
+          {
+            groupName: {
               $like: '%' + req.body.searchText + '%'
-            } 
+            }
           }
         ]
       }
