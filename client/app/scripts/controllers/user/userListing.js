@@ -65,15 +65,15 @@ angular.module('clientApp')
           $scope.gridApi = gridApi;
           $scope.gridApi.core.on.sortChanged($scope, function (grid, sortColumns) {
             if (sortColumns.length === 0) {
-              paginationOptions.sort = null;
+              pagination.options.sort = null;
             } else {
-              paginationOptions.sort = sortColumns[0].sort.direction;
+              pagination.options.sort = sortColumns[0].sort.direction;
             }
             userListing();
           });
           gridApi.pagination.on.paginationChanged($scope, function (newPage, pageSize) {
-            paginationOptions.pageNumber = newPage;
-            paginationOptions.pageSize = pageSize;
+            pagination.options.pageNumber = newPage;
+            pagination.options.pageSize = pageSize;
             userListing();
           });
         }

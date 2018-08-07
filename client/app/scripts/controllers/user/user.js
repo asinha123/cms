@@ -28,7 +28,7 @@ angular.module('clientApp')
         }, function (err) {
           messagePopupService.openGrowlError(err.data.responseMessage);
         });
-    }
+    };
     $scope.matchOldAndNewPassword = function () {
       $scope.changePasswordForm.newPassword.$setValidity('matchOldNew', $scope.passObj.newPassword !== $scope.passObj.oldPassword);
     };

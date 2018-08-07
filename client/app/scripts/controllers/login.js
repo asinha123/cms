@@ -37,7 +37,7 @@ angular.module('clientApp')
       userService.login($scope.userObj)
         .then(function (response) {
           if (response.data.token) {
-            $rootScope.activeTemp = $scope.loginObj.template['page'];
+            $rootScope.activeTemp = $scope.loginObj.template.page;
             $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
 
             $window.localStorage.Authorization = 'Bearer ' + response.data.token;
@@ -46,11 +46,11 @@ angular.module('clientApp')
             messagePopupService.openGrowlSuccess('Welcome to CMS...');
           }
           else {
-            $rootScope.activeTemp = $scope.loginObj.template['login'];
+            $rootScope.activeTemp = $scope.loginObj.template.login;
             $scope.loginObj.errorMsg = response.data.result;
           }
         }, function (response) {
-          $rootScope.activeTemp = $scope.loginObj.template['login'];
+          $rootScope.activeTemp = $scope.loginObj.template.login;
           $scope.loginObj.errorMsg = response.data.result;
         });
     };
@@ -63,29 +63,29 @@ angular.module('clientApp')
         }, function (err) {
           messagePopupService.openGrowlError(err.data.responseMessage);
         });
-    }
+      };
 
     $rootScope.$on('$routeChangeStart',
-      function (event, next, current) {
+      function () {
         if (!$http.defaults.headers.common.Authorization) {
           $http.defaults.headers.common.Authorization = $window.localStorage.Authorization;
           if ($location.path() === '/register') {
-            $rootScope.activeTemp = $scope.loginObj.template['register'];
+            $rootScope.activeTemp = $scope.loginObj.template.register;
             $location.path('/register');
             return;
           }
           userService.getUserStatus()
-            .then(function (data) {
-              $rootScope.activeTemp = $scope.loginObj.template['page'];
-            }, function (error) {
-              $rootScope.activeTemp = $scope.loginObj.template['login'];
+            .then(function () {
+              $rootScope.activeTemp = $scope.loginObj.template.page;
+            }, function () {
+              $rootScope.activeTemp = $scope.loginObj.template.login;
               $scope.userObj.email = '';
               $scope.userObj.password = '';
               $location.path('/login');
             });
         }
         else {
-          $rootScope.activeTemp = $scope.loginObj.template['page'];
+          $rootScope.activeTemp = $scope.loginObj.template.page;
           if ($location.path() === '/login') {
             $location.path('/');
           }
@@ -104,6 +104,6 @@ angular.module('clientApp')
       $window.localStorage.clear();
       $location.path('/login');
     };
-    
+
   }]);
 

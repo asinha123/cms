@@ -20,7 +20,7 @@ angular.module('clientApp')
           data = response.data.result.contactList;
           _.each(data, function(contact) {
             contact.groupName = contact.group ? contact.group.groupName : null;
-          })
+          });
 
           $scope.gridOptions.totalItems = response.data.result.count;
         }
@@ -75,12 +75,12 @@ angular.module('clientApp')
       }, function (err) {
         messagePopupService.openGrowlError(err.statusText);
       });
-    }
+    };
 
     $scope.clearSearch = function() {
       $scope.searchText = '';
       contactListing();
-    }
+    };
 
 
     function init() {
@@ -96,7 +96,6 @@ angular.module('clientApp')
               $scope.groupName = "Unknown group";
             }
           }, function (err) {
-            $location.url('/contact');
             messagePopupService.openGrowlError(err.statusText);
           });
       }
@@ -130,9 +129,9 @@ angular.module('clientApp')
           $scope.gridApi = gridApi;
           $scope.gridApi.core.on.sortChanged($scope, function (grid, sortColumns) {
             if (sortColumns.length === 0) {
-              paginationOptions.sort = null;
+              pagination.options.sort = null;
             } else {
-              paginationOptions.sort = sortColumns[0].sort.direction;
+              pagination.options.sort = sortColumns[0].sort.direction;
             }
             contactListing();
           });

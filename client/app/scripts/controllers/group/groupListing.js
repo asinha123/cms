@@ -72,12 +72,12 @@ angular.module('clientApp')
         }, function (err) {
           messagePopupService.openGrowlError(err.statusText);
         });
-    }
+    };
 
     $scope.clearSearch = function () {
       $scope.searchText = '';
       groupListing();
-    }
+    };
 
 
     function init() {
@@ -107,9 +107,9 @@ angular.module('clientApp')
           $scope.gridApi = gridApi;
           $scope.gridApi.core.on.sortChanged($scope, function (grid, sortColumns) {
             if (sortColumns.length === 0) {
-              paginationOptions.sort = null;
+              pagination.options.sort = null;
             } else {
-              paginationOptions.sort = sortColumns[0].sort.direction;
+              pagination.options.sort = sortColumns[0].sort.direction;
             }
             groupListing();
           });

@@ -12,7 +12,7 @@ angular.module('clientApp')
           .then(function success(response) {
             notificationTimeout = response.notificationTimeout;
             d.resolve(notificationTimeout);
-          }, function error(response) {
+          }, function error() {
             console.log('Unable to fetch ' + servicesUrl.settingsUrl);
             d.resolve(-1);
           });

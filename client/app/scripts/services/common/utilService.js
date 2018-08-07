@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-  .factory('utilService', ['servicesUrl', 'commonApiService', function (servicesUrl, commonApiService) {
+  .factory('utilService', [function () {
 
     var pagination = function() {
       return {
@@ -12,8 +12,8 @@ angular.module('clientApp')
           order: 'DESC'
         },
         pageSizes: [10, 20, 50]
-      }
-    }
+      };
+    };
     return {
       pagination: pagination,
     };
