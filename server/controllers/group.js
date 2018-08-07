@@ -11,7 +11,7 @@ var list = function (req, res) {
     var where = {};
 
     if (req.body.userId) {
-      where = { groupId: req.body.userId };
+      where = { userId: req.body.userId };
     }
     var offset = ((req.body.pageNumber - 1) * req.body.pageSize);
     var limit = req.body.pageSize;

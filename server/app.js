@@ -8,6 +8,12 @@ var bodyParser = require('body-parser');
 var jws = require('express-jwt-session');
 var secret = 'this is the secret';
 
+var indexRouter = require('./routes/index');
+var registerRouter = require('./routes/register');
+
+var userRouter = require('./routes/user');
+var groupRouter = require('./routes/group');
+var contactRouter = require('./routes/contact');
 
 var app = express();
 
@@ -21,7 +27,7 @@ app.use(express.json());
 app.use(bodyParser.json({limit: '100mb'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public/dist')));
 
 
 var isAuthenticated = jws.isAuthenticated(secret).unless({path: ['/api/auth/user/login']});
@@ -29,12 +35,8 @@ var isAuthenticated = jws.isAuthenticated(secret).unless({path: ['/api/auth/user
 app.use('/api/auth', isAuthenticated);
 
 
-var registerRouter = require('./routes/register');
 
-var userRouter = require('./routes/user');
-var groupRouter = require('./routes/group');
-var contactRouter = require('./routes/contact');
-
+app.use('/', indexRouter);
 app.use('/api/user', registerRouter);
 
 app.use('/api/auth/user', userRouter);

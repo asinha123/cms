@@ -9,7 +9,7 @@
  */
 
 angular.module('clientApp')
-  .controller('LoginCtrl', ['$scope', '$location', 'userService', '$window', '$rootScope', '$http', 'servicesUrl', 'config', 'messagePopupService', '$cookies', function ($scope, $location, userService, $window, $rootScope, $http, servicesUrl, config, messagePopupService, $cookies) {
+  .controller('LoginCtrl', ['$scope', '$location', 'userService', '$window', '$rootScope', '$http', 'servicesUrl', 'config', 'messagePopupService', function ($scope, $location, userService, $window, $rootScope, $http, servicesUrl, config, messagePopupService) {
 
     function int() {
       $scope.loginObj = {};
