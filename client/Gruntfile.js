@@ -434,7 +434,12 @@ module.exports = function (grunt) {
           cwd: '.',
           src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
           dest: '<%= yeoman.dist %>'
-        }]
+        }, { //fixed icon not showing in grid issue https://github.com/angular-ui/ui-grid/issues/1679
+        expand: true,
+        cwd: 'bower_components/angular-ui-grid',
+        dest: '<%= yeoman.dist %>/styles/fonts',
+        src: ['*.eot','*.svg','*.ttf','*.woff']
+      }]
       },
       styles: {
         expand: true,
