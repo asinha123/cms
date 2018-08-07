@@ -1,0 +1,73 @@
+<md-card class="md-card-layout">
+  <md-toolbar ng-style='{"background-color" : "#5d8097"}' class="md-theme-light">
+    <h1 class="md-toolbar-tools">Register Yourself</h1>
+  </md-toolbar>
+  <md-card-content>
+    <div layout="row" layout-wrap>
+      <h4 flex="60">Already Registered? You can login <a href="#/rgister">Here</a></h4>
+      <form layout="row" layout-wrap layout-padding name="userRegisterForm" ng-submit="userRegisterForm.$valid && register()" novalidate autocomplete="off">
+        <md-input-container flex="50">
+          <label>First Name</label>
+          <input type="text" ng-model="userObj.fName" ng-required="true" name="fName">
+          <div ng-messages="userRegisterForm.fName.$error">
+            <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>Last Name</label>
+          <input type="text" ng-required="true" ng-model="userObj.lName" name="lName">
+          <div ng-messages="userRegisterForm.lName.$error">
+            <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>User Name</label>
+          <input type="text" ng-model="userObj.userName" ng-required="true" name="userName">
+          <div ng-messages="userRegisterForm.userName.$error">
+            <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>Password</label>
+          <input type="password" ng-model="userObj.password" name="password" ng-required="true"
+          ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/">
+          <div ng-messages="userRegisterForm.password.$error">
+            <div ng-message="required">Required</div>
+            <div ng-message="pattern">8 characters long,should contain one number,one capital character, one special character</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>Confirm Password</label>
+          <input type="password" name="confirmPassword" ng-model="userObj.confirmPassword" compare-to="userObj.password">
+          <div ng-messages="userRegisterForm.confirmPassword.$error">
+            <div ng-message="compareTo">Password mismatch</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>Email</label>
+          <input type="text" ng-required="true" ng-model="userObj.email" ng-pattern="emailPattern" name="email">
+          <div ng-messages="userRegisterForm.email.$error">
+            <div ng-message="required">Required</div>
+            <div ng-message="pattern">Invalid Email Id</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>Phone</label>
+          <input type="text" ng-required="true" ng-model="userObj.phone" name="phone">
+          <div ng-messages="userRegisterForm.email.$error">
+            <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex="50">
+          <label>Aadhar</label>
+          <input type="text" ng-model="userObj.aadhar" name="aadhar">
+        </md-input-container>
+
+        <div layout="row" layout-align="end end" flex="100">
+          <md-button type="submit" class="md-raised md-primary">Submit</md-button>
+        </div>
+      </form>
+    </div>
+
+  </md-card-content>
+</md-card>

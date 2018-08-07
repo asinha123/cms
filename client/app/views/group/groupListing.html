@@ -1,0 +1,31 @@
+<div layout="row" layout-wrap ng-controller="GroupListingCtrl" class="items-listing">
+  <md-card class="md-card-layout">
+    <md-card-title class="md-headline">
+      <div flex="60" layout="row" layout-align="start center">Group Listing</div>
+      <div flex="40" layout="row" layout-align="end center">
+        <md-button class="md-raised md-primary" href="#/group?groupId=add">
+          <ng-md-icon icon="add_circle" style="fill: #FFFFFF" size="20"></ng-md-icon>&nbsp;Add
+        </md-button>
+      </div>
+    </md-card-title>
+    <md-card-content>
+        <form  flex="40" layout="row" layout-align="start start" name="serachForm" ng-submit="search()" autocomplete="off">
+          <md-input-container flex>
+            <label>Search by name, status</label>
+            <input type="text" ng-model="searchText">
+          </md-input-container>
+          <md-button type="submit" class="md-raised md-primary">Search</md-button>
+          <md-button ng-click="clearSearch()" class="md-raised md-primary">clear</md-button>
+        </form>
+      <div  flex="100" layout="row" layout-align="start center" layout-wrap>
+        <div  ui-grid="gridOptions" ui-grid-pagination class="grid" class="grid" flex="100">
+          <div class="no-rows" ng-hide="gridOptions.data.length">
+            <div class="msg">
+              <span ng-if="gridOptions.data.length == 0">No Record Found</span>
+              <span ng-if="gridOptions.data < 0">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-card-content>
+</div>

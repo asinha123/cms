@@ -1,0 +1,22 @@
+<md-card class="md-card-layout" ng-controller="AddEditGroupCtrl">
+  <md-toolbar ng-style='{"background-color" : "#5d8097"}' class="md-theme-light">
+    <h1 class="md-toolbar-tools">{{label}}</h1>
+  </md-toolbar>
+  <md-card-content>
+    <div layout="row" flex="100" layout-align="center center"  layout-wrap>
+      <form layout="row" flex="50"  layout-wrap layout-padding name="groupRegisterForm" ng-submit="groupRegisterForm.$valid && addEditGroup()" novalidate autocomplete="off">
+        <md-input-container flex="100">
+          <label>Group Name</label>
+          <input type="text" ng-model="groupObj.groupName" ng-required="true" name="groupName">
+          <div ng-messages="groupRegisterForm.groupName.$error">
+            <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <div layout="row" layout-align="end end" flex="100">
+          <md-button type="submit" class="md-raised md-primary">Submit</md-button>
+        </div>
+      </form>
+    </div>
+
+  </md-card-content>
+</md-card>

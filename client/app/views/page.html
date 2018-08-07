@@ -1,0 +1,41 @@
+<md-content ng-controller="MainCtrl">
+  <!-- Add your site or application content here -->
+  <div class="header">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container nav-area">
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div layout="row" layout-wrap>
+            <div flex="60" layout="row" layout-align="start center">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a class="home-icon" href="#/">
+                    <ng-md-icon icon="home" style="fill: #F4B11D" size="25"></ng-md-icon>
+                  </a>
+                </li>
+                <li><a ng-href="#/group" >Groups</a></li>
+                <!--<li><a ng-href="#/contact">Contacts</a></li>-->
+                <!--<li><a ng-href="#/user">Users</a></li>-->
+                <li><a ng-href="#/edit-profile">Edit Profile</a></li>
+                <li><a ng-href="#/change-password">Change Password</a></li>
+                
+                
+                <li><a ng-controller="LogoutCtrl" href="#/" ng-click="logout();">Logout</a></li>
+              </ul>
+            </div>
+            <div flex="40" layout="row" layout-align="end center">
+              <div layout-align="end center">
+                <span class="welcome"><b>Welcome {{profile.userName}}</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="outer-container">
+    <div class="container">
+      <div ng-view id="ng-view-content-area"></div>
+    </div>
+  </div>
+
+</md-content>

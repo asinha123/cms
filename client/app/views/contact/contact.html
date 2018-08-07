@@ -1,0 +1,8 @@
+<div id="contact" ng-switch="tab" >
+	<div ng-switch-when="listing">
+		<div ng-include="'views/contact/contactListing.html'"></div>
+	</div>
+	<div ng-switch-when="addEdit">
+		<div ng-include="'views/contact/addEditContact.html'"></div>
+	</div>
+</div>

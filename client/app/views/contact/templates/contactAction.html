@@ -1,0 +1,12 @@
+<div class="action-template">
+  <a href="javascript:void(0)" ng-click="grid.appScope.confirmToggleStatus(row.entity.contactId, row.entity.status)" >
+    <ng-md-icon ng-if="row.entity.status === 'active'" icon="fiber_manual_record" style="fill: #2E7D32; margin: auto;" size="20" title="Deactivate"></ng-md-icon>
+    <ng-md-icon ng-if="row.entity.status === 'inactive'" icon="fiber_manual_record" style="fill: #F44336; margin: auto;" size="20" title="Activate"></ng-md-icon>
+  </a> |
+  <a  href="#/contact?groupId={{row.entity.groupId}}&&contactId={{row.entity.contactId}}" title="Edit">
+    <ng-md-icon icon="edit" style="fill: #5D8097; margin: auto;" size="20"></ng-md-icon>
+  </a> |
+  <a href="javascript:void(0)" ng-click="grid.appScope.confirmDelete(row.entity.contactId)" title="Delete">
+    <ng-md-icon icon="delete" style="fill: #5D8097; margin: auto;" size="20"></ng-md-icon>
+  </a>
+</div>

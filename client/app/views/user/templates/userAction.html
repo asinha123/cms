@@ -1,0 +1,11 @@
+<div class="action-template">
+  <a href="#/user?userId={{row.entity.userId}}" title="View">
+    <ng-md-icon icon="visibility" style="fill: #5D8097; margin: auto;" size="20"></ng-md-icon>
+  </a> |
+  <a href="#/user?userId={{row.entity.userId}}" title="Edit">
+    <ng-md-icon icon="edit" style="fill: #5D8097; margin: auto;" size="20"></ng-md-icon>
+  </a> |
+  <a href="javascript:void(0)" ng-click="grid.appScope.confirmDelete(row.entity.userId)" title="Delete">
+    <ng-md-icon icon="delete" style="fill: #5D8097; margin: auto;" size="20"></ng-md-icon>
+  </a>
+</div>

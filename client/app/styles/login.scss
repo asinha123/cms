@@ -1,0 +1,32 @@
+#loginForm {
+  border: 2px solid #5D8097;
+  bottom: 0;
+  height: 400px;
+  margin: auto;
+  margin-top: 30px;
+  width: 400px;
+  align-items: normal;
+}
+
+#loginForm.layout-row .flex-33 {
+  max-width: 99%;
+}
+
+#loginForm .layout-wrap .md-button {
+  width: 88%;
+  margin: auto;
+  background-color: #5D8097;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+#loginForm .login-form-fields {
+  width: 88%;
+  margin: auto;
+}
+
+#loginForm .login-message-box {
+  margin-bottom: 15px;
+  height: 35px;
+}
+

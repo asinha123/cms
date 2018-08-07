@@ -1,0 +1,20 @@
+<div layout="row" layout-wrap ng-controller="UserListingCtrl" class="items-listing">
+<md-card class="md-card-layout">
+		<md-card-title class="md-headline">
+			<div flex="60" layout="row" layout-align="start center">{{label}}</div>
+			<div  flex="40" layout="row" layout-align="end center">
+			</div>
+		</md-card-title>		  
+		<md-card-content>
+			<div flex="100" layout="row" layout-align="start center" layout-wrap>
+				<div id="grid1" ui-grid="gridOptions" ui-grid-pagination class="grid" class="grid" flex="100">
+					<div class="no-rows" ng-hide="gridOptions.data.length">
+				      <div class="msg">
+				        <span ng-if="gridOptions.data.length == 0">No Record Found</span>
+						<span ng-if="gridOptions.data < 0">Loading...</span>
+				      </div>
+			    	</div>
+				</div>				
+			</div>
+		</md-card-content>	
+</div>

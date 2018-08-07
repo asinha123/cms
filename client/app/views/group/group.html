@@ -1,0 +1,8 @@
+<div id="group" ng-switch="tab" >
+	<div ng-switch-when="listing">
+		<div ng-include="'views/group/groupListing.html'"></div>
+	</div>
+	<div ng-switch-when="addEdit">
+		<div ng-include="'views/group/addEditGroup.html'"></div>
+	</div>
+</div>

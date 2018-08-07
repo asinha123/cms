@@ -1,0 +1,25 @@
+<div id="loginForm" layout="row" layout-align="center center">
+
+	<form flex="33" ng-submit="login()" autocomplete="off">
+
+		<h3 layout="column" layout-align="center center">LOGIN FORM</h3>
+		<div layout="column" class="login-message-box" layout-align="center center" layout-wrap>
+			<p style="color: red">{{loginObj.errorMsg}}</p>
+		</div>
+		<div layout="column" layout-align="center center" layout-wrap>
+			<md-input-container class="login-form-fields">
+				<label>Email</label>
+				<input type="text" ng-required="true" ng-model="userObj.email">
+			</md-input-container>
+			<md-input-container class="login-form-fields">
+				<label>Password</label>
+				<input type="password" ng-required="true" ng-model="userObj.password">
+			</md-input-container>
+		</div>
+		<div layout="row" layout-align="end end" layout-wrap>
+			<md-button class="md-raised md-primary waves-effect" type="save">SIGN IN</md-button>
+		</div>
+		<div layout="row" layout-padding layout-margin layout-align="center center">Not Registered? Register <a href="#/register">Here</a>
+		</div>
+	</form>
+</div>

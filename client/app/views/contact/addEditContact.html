@@ -1,0 +1,43 @@
+<md-card class="md-card-layout" ng-controller="AddEditContactCtrl">
+  <md-toolbar ng-style='{"background-color" : "#5d8097"}' class="md-theme-light">
+    <h1 class="md-toolbar-tools">{{label}} for Group: <span class="groupname">{{groupName}}</span></h1>
+  </md-toolbar>
+  <md-card-content>
+    <form layout="row" flex="100" layout-wrap layout-padding name="contactRegisterForm" ng-submit="contactRegisterForm.$valid && addEditContact()"
+      novalidate autocomplete="off">
+      <md-input-container flex="50">
+        <label>First Name</label>
+        <input type="text" ng-model="contactObj.fName" ng-required="true" name="fName">
+        <div ng-messages="contactRegisterForm.fName.$error">
+          <div ng-message="required">Required</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="50">
+        <label>Last Name</label>
+        <input type="text" ng-model="contactObj.lName" ng-required="true" name="lName">
+        <div ng-messages="contactRegisterForm.lName.$error">
+          <div ng-message="required">Required</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="50">
+        <label>Email</label>
+        <input type="email" ng-model="contactObj.email" ng-required="true" name="email">
+        <div ng-messages="contactRegisterForm.email.$error">
+          <div ng-message="required">Required</div>
+          <div ng-message="email">Invalid email</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="50">
+        <label>Phone</label>
+        <input type="text" ng-model="contactObj.phone" ng-required="true" name="phone">
+        <div ng-messages="contactRegisterForm.phone.$error">
+          <div ng-message="required">Required</div>
+        </div>
+      </md-input-container>
+      <div layout="row" layout-align="end end" flex="100">
+        <md-button type="submit" class="md-raised md-primary">Submit</md-button>
+      </div>
+    </form>
+
+  </md-card-content>
+</md-card>

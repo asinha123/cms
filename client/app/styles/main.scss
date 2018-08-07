@@ -1,0 +1,429 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+//Importing custom css files
+@import "login.scss";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  background-color: #fafafa;
+  padding: 0;
+  /*overflow: hidden*/;
+}
+
+/* Alpha/Beta release ribbon */
+/*body:after{
+  content: "Alpha v1.0.0";
+  position: fixed;
+  width: 180px;
+  height: 25px;
+  background: #EE8E4A;
+  top: 20px;
+  left: -50px;
+  text-align: center;
+  font-size: 13px;
+  font-family: sans-serif;
+  
+  font-weight: bold;
+  color: #fff;
+  line-height: 27px;
+  -ms-transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+}*/
+
+.box {
+  width: 200px;
+  position: absolute;  
+  background: #EEE;
+  right: 0;
+}
+.ribbon {
+    height: 77px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    width: 75px;
+    z-index: 1;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#F70505 0%, #8F0808 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; right: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8F0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8F0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+/* End of Ribbon CSS */
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  margin-bottom: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 208px) {
+  .container {
+    width: 99%;
+  }
+
+  a {
+    cursor: pointer;
+  }
+  /* Remove the padding we set earlier */
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  z-index: 100;
+}
+.outer-container {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 100px;
+}
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+#page-wrapper {
+  margin: 0 40px;
+}
+.no-rows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.no-rows .msg {
+  opacity: 1;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 50%;
+  line-height: 200%;
+  background-color: #eee;
+  border-radius: 4px;
+  border: 1px solid #555;
+  text-align: center;
+  font-size: 24px;
+  display: table;
+}
+
+.grid-align-center {
+  text-align: center;
+}
+.grid-align-right {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.container.nav-area {
+  .navbar-nav {
+    a{
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      padding-top: 5px;
+      padding-bottom : 5px;
+    }
+    a:focus, a:hover, a.active {
+       color: #f4b11d;
+    }
+  }
+  max-width: 100%;
+  width: 100%;
+  background-color: #373934;
+  border-top: solid 4px #feb00a;
+  border-bottom: solid 4px #feb00a;
+  text-transform: uppercase;
+}
+
+.navbar {
+  margin-bottom: 10px; 
+}
+
+.container.nav-area .navbar-nav > li > a.home-icon {
+  padding-top: 0.2em;
+}
+
+.welcome-page, .install-page {
+	margin: 0 auto;
+	width: 930px;	
+}
+
+.md-button {
+  margin: 6px 2px;
+  line-height: 30px;
+  min-height: 30px;
+}
+
+.md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised {
+  background-color: #5D8097;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.md-button.md-default-theme.md-primary.md-fab:hover, .md-button.md-primary.md-fab:hover, .md-button.md-default-theme.md-primary.md-raised:hover, .md-button.md-primary.md-raised:hover, .md-raised.md-primary.md-button.md-ink-ripple:hover {
+  background-color: #3D7AA0;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.md-button.md-default-theme.md-primary.md-fab.md-focused:not([disabled]), .md-button.md-primary.md-fab.md-focused:not([disabled]), .md-button.md-default-theme.md-primary.md-fab:hover:not([disabled]), .md-button.md-primary.md-fab:hover:not([disabled]), .md-button.md-default-theme.md-primary.md-raised.md-focused:not([disabled]), .md-button.md-primary.md-raised.md-focused:not([disabled]), .md-button.md-default-theme.md-primary.md-raised:hover:not([disabled]), .md-button.md-primary.md-raised:hover:not([disabled]) {
+  background-color: #3D7AA0;
+}
+
+.layout-padding, .layout-padding-gt-sm, .layout-padding-md, .layout-padding > *, .layout-padding-gt-sm > *, .layout-padding-md > *, .layout-padding > .flex, .layout-padding > .flex-gt-sm, .layout-padding > .flex-md {
+  padding: 2px;
+}
+
+.container.nav-area {
+    background-color: #414042;
+    border-bottom: 4px solid #5d8097;
+    border-top: 4px solid #5d8097;
+    max-width: 100%;
+    width: 100%;
+}
+#page-wrapper .footer {
+  position: fixed;
+}
+
+.md-headline {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #55575A
+}
+
+.items-listing .md-card-layout {
+  width: 100%;
+}
+
+ng-md-icon svg {
+  margin: auto;
+}
+
+.btn2 {
+  color : #FFFFFF;
+  background-color: #FFFFFF;
+  border: 1px solid #5D8097;
+  font-size: 16px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  min-width: 40px;  
+  height: 30px;
+
+}
+
+.btn2:not([disabled]):hover {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  border: 1px solid #3D7AA0;
+}
+
+.btn2[disabled] {
+  color : #FFFFFF;
+  background-color: #FFFFFF;
+  border: 1px solid #5D8097;
+}
+
+.ui-grid-row .action-template {
+  padding: 0.3em;
+}
+
+md-nav-bar .md-button.md-default-theme.md-accent, .md-button.md-accent {
+    color: #5D8097;
+    font-weight: bold;
+}
+md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar {
+    color: #5D8097;
+    background: #5D8097;
+}
+
+md-nav-bar .md-button._md-nav-button, .md-button._md-nav-button.md-active {
+  padding: 1px 10px;
+  margin: 0 2px;
+  text-transform: none;
+  background-color: #E0E0E0;
+}
+
+md-nav-bar .md-nav-bar {
+    height: 30px;
+    border-style: solid;
+    border-color: #FFFFFF #FFFFFF #5D8097 #FFFFFF;    
+}
+
+md-nav-bar .md-button._md-nav-button:not([disabled]), .md-button._md-nav-button:hover,  
+.md-button._md-nav-button:hover:not([disabled]) {
+  background-color: #FFFFFF;
+  border: 1px solid #5D8097;
+  color: #5D8097;
+}
+
+md-nav-bar .md-button._md-nav-button.md-unselected {  
+  border-style: solid;
+  border-color: #C0C0C0 #C0C0C0 #5D8097 #C0C0C0;
+  background-color: #FFFFFF;
+}
+.grid-link {
+  margin: 5px;
+}
+.ins-prop-value {
+  word-wrap: break-word;
+}
+.action-template a {
+   text-decoration: none;
+}
+.container.nav-area .welcome {
+  color: #FFFFFF;
+  text-transform: none;
+}
+md-toolbar {
+  min-height: 35px;
+  h1.md-toolbar-tools {
+    height: 35px;
+    font-size: 18px;
+  }
+}
+md-menu-content {
+  padding: 4px 0;
+  background-color: #5d8097;  
+  md-menu-item, md-menu-item {
+    background-color: #414042;
+    height: 30px;
+    min-height: 30px;
+    .md-button , .md-button :hover{
+      color: #FFFFFF;
+      font-weight: bold;
+    }    
+  }
+  md-menu-item > a.md-button {
+    padding-top: 1px;
+  }
+}
+.md-select-placeholder >span {
+  font-weight: bold;
+}
+md-menu-content.md-menu-bar-menu.md-dense md-menu-divider {
+    margin: 2px 0;
+}
+
+md-menu-content.md-menu-bar-menu.md-dense md-menu-item.md-indent > .md-button, md-menu-content.md-menu-bar-menu.md-dense md-menu-item.md-indent .md-menu > .md-button {
+    padding: 0 10px;
+}
+
+md-menu-content.md-menu-bar-menu.md-dense {
+    max-height: none;
+    padding: 5px 0;
+}
+.md-card-layout.bdca {
+  width: 100%;
+}
+
+
+.grid {
+  height: 391px;
+}
+.groupname {
+  font-weight: 700;
+  margin-left: 10px;
+}
+.navbar {
+  border: none;
+  background-color: transparent;
+}
