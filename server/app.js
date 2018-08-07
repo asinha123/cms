@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(bodyParser.json({limit: '100mb'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/public', express.static(path.join(__dirname, 'public/dist')));
+app.use('/public', express.static(path.join(__dirname, 'public/client')));
 
 
 var isAuthenticated = jws.isAuthenticated(secret).unless({path: ['/api/auth/user/login']});
