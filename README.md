@@ -10,6 +10,7 @@ Database setup:
 Import database "resources/contactms.sql" to the mysql server.
 
 ================================
+
 Server setup:
 
 1. Go to "server" directory.
