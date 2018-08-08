@@ -25,7 +25,7 @@ Client setup:
 1. Go to "client" directory.
 2. Run "npm install" command.
 3. Run "bower install" command.
-4. Run "grunt serve" command to up the UI (proxy is already set in gruntFile to point backend at 3000).
+4. Run "grunt serve" command to up the UI (proxy is already set in gruntFile to point backend at port 3000).
 
 ================================
 
